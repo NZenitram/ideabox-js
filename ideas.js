@@ -1,3 +1,11 @@
+function mouseOver(){
+  document.getElementById("save-button").style.background = "#045E55";
+}
+
+function mouseOut(){
+  document.getElementById("save-button").style.background = "#00A79D";
+}
+
 function saveIdea(){
   var title = document.getElementById('title')
   var body = document.getElementById('body')
