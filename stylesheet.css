@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .idea {
   color: #00A79D;
 }
@@ -48,4 +52,16 @@
 
 #search {
   padding-top: 15px;
+}
+
+#ideas ul {
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+  text-align: left
+}
+
+#my-ideas li {
+  word-wrap: break-word;
 }

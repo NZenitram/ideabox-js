@@ -12,15 +12,18 @@ function saveIdea(){
   var save = document.getElementById('button')
   var titleText = title.getElementsByClassName('input-text')[0].value
   var bodyText = body.getElementsByClassName('input-text')[0].value
+  clearFields(titleText, bodyText)
   stringifyIdea(titleText, bodyText)
 }
 
-function stringifyIdea(titleText, bodyText){
-  var idea = {title: titleText, idea: bodyText}
-  var stringified = JSON.stringify(idea)
-  localStorageSave(stringified)
+function clearFields(titleText, bodyText) {
+  titleText = ""
+  bodyText = ""
 }
 
-function localStorageSave(stringified){
-  localStorage.setItem('ideabox', stringified)
+function stringifyIdea(titleText, bodyText){
+  var oldIdeas = JSON.parse(localStorage.getItem('ideabox')) || [];
+  var idea = {'title': titleText, 'idea': bodyText};
+  oldIdeas.push(idea);
+  localStorage.setItem('ideabox', JSON.stringify(oldIdeas));
 }
