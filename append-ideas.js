@@ -1,7 +1,7 @@
 window.onload = function() {
   var save = document.getElementById('save-button');
   save.addEventListener('click', appendIdeas)
-  appendIdeas()
+  // appendIdeas()
 }
 
 function appendIdeas(){
@@ -14,13 +14,9 @@ function appendIdeas(){
     li.className = "idea-cell";
 
     var a = document.createElement('a');
-    a.innerHTML = `<h3 class="idea-title">${ideas[i].title}</h3><p>${ideas[i].idea}</p>`
+    a.innerHTML = `<h3 class="idea-title">${ideas[i].title}<img class='del-svg' src="icons/delete.svg"></h3><p>${ideas[i].idea}</p><img class='vote up-svg' src="icons/upvote.svg"><img class='vote down-svg' src="icons/downvote.svg">`
 
     list.appendChild(li);
     li.appendChild(a)
-
-
-
   }
-
 }
