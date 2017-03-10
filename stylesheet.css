@@ -4,6 +4,8 @@
 
 ul {
   list-style-type: none;
+  position: relative;
+  right: 20px;
 }
 
 .idea {
@@ -42,12 +44,22 @@ ul {
   display: inline;
 }
 
+.quality {
+  position: relative;
+  right: -40px;
+}
+
 .vote {
   height: 25px;
   width: 25px;
   float: left;
-  display: inline;
 }
+
+.down-svg {
+  position: relative;
+  right: -9px
+}
+
 
 #bg-color {
   background: #e5f3f2;
