@@ -3,6 +3,7 @@ window.onload = function() {
   upVote()
   downVote()
   deleteButton()
+  removeIdea()
   var save = document.getElementById('save-button');
   save.addEventListener('click', appendIdeas)
 }
@@ -44,18 +45,21 @@ function downVote() {
 }
 
 function appendIdeas(){
-  var ideas = JSON.parse(localStorage.getItem('ideabox'))
+  var ideas = JSON.parse(localStorage.getItem('ideabox')) || []
   var list = document.getElementById('my-ideas')
-
+  var li = document.createElement("li");
+  var a = document.createElement('a');
+  list.appendChild(li);
   for (var i = 0; i < ideas.length; i++) {
 
-    var li = document.createElement("li");
     li.className = "idea-cell";
 
-    var a = document.createElement('a');
     a.innerHTML = `<h3 class="idea-title"><p>${ideas[i].title}<img class='del-svg' src="icons/delete.svg"></h3></p>${ideas[i].idea}</p><p><img class='vote up-svg' src="icons/upvote.svg"><img class='vote down-svg' src="icons/downvote.svg"><p class="quality">quality: swill</p>`
 
-    list.appendChild(li);
     li.appendChild(a)
   }
+  upVote()
+  downVote()
+  deleteButton()
+  removeIdea()
 }

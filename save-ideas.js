@@ -17,8 +17,8 @@ function saveIdea(){
 }
 
 function clearFields(titleText, bodyText) {
-  titleText = ""
-  bodyText = ""
+  document.getElementById('title-field').value = ''
+  document.getElementById('body-field').value = ''
 }
 
 function stringifyIdea(titleText, bodyText){
