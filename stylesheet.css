@@ -18,6 +18,8 @@ ul {
   height: 24px;
   width: 60%;
   font-size: 18px;
+  border: 1px solid;
+  border-color: #6D6E71;
 }
 
 .button {
@@ -55,6 +57,7 @@ ul {
 }
 
 #ideas ul {
+  width: 350px;
   display:-moz-inline-stack;
   display:inline-block;
   zoom:1;
