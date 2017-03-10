@@ -1,24 +1,46 @@
 window.onload = function() {
   appendIdeas();
   upVote()
-  var downvote = document.getElementsByClassName('down-svg');
+  downVote()
+  deleteButton()
   var save = document.getElementById('save-button');
   save.addEventListener('click', appendIdeas)
-  upvote.addEventListener("mouseover", upVote)
-  downvote.addEventListener("mouseout", downVote)
 }
 
-function upVote(){
+function deleteButton() {
+  var deletebuttons = document.getElementsByClassName('del-svg');
+  for (var i = 0; i < deletebuttons.length; i++) {
+    deletebuttons[i].addEventListener("mouseover", function(){
+      this.src = "icons/delete-hover.svg";
+    })
+    deletebuttons[i].addEventListener("mouseout", function(){
+      this.src = "icons/delete.svg";
+    })
+  }
+}
+
+function upVote() {
   var upvote = document.getElementsByClassName('up-svg');
   for (var i = 0; i < upvote.length; i++) {
     upvote[i].addEventListener("mouseover", function(){
       this.src = "icons/upvote-hover.svg";
     })
+    upvote[i].addEventListener("mouseout", function(){
+      this.src = "icons/upvote.svg";
+    })
   }
 }
 
-function downVote(){
-
+function downVote() {
+  var downvote = document.getElementsByClassName('down-svg');
+  for (var i = 0; i < downvote.length; i++) {
+    downvote[i].addEventListener("mouseover", function(){
+      this.src = "icons/downvote-hover.svg";
+    })
+    downvote[i].addEventListener("mouseout", function(){
+      this.src = "icons/downvote.svg";
+    })
+  }
 }
 
 function appendIdeas(){
