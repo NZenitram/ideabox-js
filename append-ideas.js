@@ -3,6 +3,7 @@ window.onload = function() {
   upVote()
   downVote()
   deleteButton()
+  removeIdea()
   var save = document.getElementById('save-button');
   save.addEventListener('click', appendIdeas)
 }
@@ -46,7 +47,6 @@ function downVote() {
 function appendIdeas(){
   var ideas = JSON.parse(localStorage.getItem('ideabox'))
   var list = document.getElementById('my-ideas')
-
   for (var i = 0; i < ideas.length; i++) {
 
     var li = document.createElement("li");
