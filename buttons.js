@@ -12,7 +12,7 @@ function deleteIdea() {
     if (ideas[i].title === title) {
       ideas.splice(i, 1)
     }
+  }
   localStorage.setItem('ideabox', JSON.stringify(ideas))
   appendIdeas()
-  }
 }

@@ -1,11 +1,30 @@
 window.onload = function() {
+  var save = document.getElementById('save-button');
+  save.addEventListener('click', appendIdeas)
   appendIdeas();
+}
+
+function appendIdeas(){
+  var ideas = localStorage.getItem('ideabox')
+  var list = document.getElementById('ideas')
+  var ul = document.createElement('ul');
+  var idea = list.appendChild(ul);
+  if (ideas !== null) {
+    var ideasJSON = JSON.parse(localStorage.getItem('ideabox'));
+    for (var i = 0; i < ideasJSON.length; i++) {
+
+      var li = document.createElement('li');
+
+      ul.className = "my-ideas";
+      li.innerHTML = `<h3 class="idea-title">${ideasJSON[i].title}<img class='del-svg' src="icons/delete.svg"></h3><p>${ideasJSON[i].idea}</p><img class='vote up-svg' src="icons/upvote.svg"><img class='vote down-svg' src="icons/downvote.svg"><p class="quality">quality: swill</p>`
+
+      ul.appendChild(li)
+    }
+  }
   upVote()
   downVote()
   deleteButton()
   removeIdea()
-  var save = document.getElementById('save-button');
-  save.addEventListener('click', appendIdeas)
 }
 
 function deleteButton() {
@@ -42,24 +61,4 @@ function downVote() {
       this.src = "icons/downvote.svg";
     })
   }
-}
-
-function appendIdeas(){
-  var ideas = JSON.parse(localStorage.getItem('ideabox')) || []
-  var list = document.getElementById('my-ideas')
-  var li = document.createElement("li");
-  var a = document.createElement('a');
-  list.appendChild(li);
-  for (var i = 0; i < ideas.length; i++) {
-
-    li.className = "idea-cell";
-
-    a.innerHTML = `<h3 class="idea-title"><p>${ideas[i].title}<img class='del-svg' src="icons/delete.svg"></h3></p>${ideas[i].idea}</p><p><img class='vote up-svg' src="icons/upvote.svg"><img class='vote down-svg' src="icons/downvote.svg"><p class="quality">quality: swill</p>`
-
-    li.appendChild(a)
-  }
-  upVote()
-  downVote()
-  deleteButton()
-  removeIdea()
 }
