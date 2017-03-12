@@ -1,6 +1,8 @@
 window.onload = function() {
   var save = document.getElementById('save-button');
+  var search = document.getElementById('search-input')
   save.addEventListener('click', clearList)
+  search.addEventListener('keyup', searchIdeas)
   appendIdeas();
 }
 
