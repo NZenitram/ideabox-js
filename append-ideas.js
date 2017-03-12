@@ -4,10 +4,6 @@ window.onload = function() {
   save.addEventListener('click', clearList)
   search.addEventListener('keyup', searchIdeas)
   appendIdeas();
-  var upVote = document.getElementById('up-svg');
-  var downVote = document.getElementById('down-svg');
-  upVote.addEventListener('click', upQuality)
-  downVote.addEventListener('click', downQuality)
 }
 
 function clearList() {
@@ -28,7 +24,7 @@ function appendIdeas(){
 
       li.className = "ideas-li";
 
-      li.innerHTML = `<h3 class="idea-title">${ideasJSON[i].title}<img class='del-svg' src="icons/delete.svg"></h3><p>${ideasJSON[i].idea}</p><img id="up-svg" class='vote up-svg' src="icons/upvote.svg"><img id="down-svg" class='vote down-svg' src="icons/downvote.svg"><p class="quality">quality: swill</p>`
+      li.innerHTML = `<h3 class="idea-title">${ideasJSON[i].title}<img class='del-svg' src="icons/delete.svg"></h3><p>${ideasJSON[i].idea}</p><img id="up-svg" class='vote up-svg' src="icons/upvote.svg"><img id="down-svg" class='vote down-svg' src="icons/downvote.svg"><p class="quality">${ideasJSON[i].quality}</p>`
 
       ul.appendChild(li)
     }
@@ -37,6 +33,8 @@ function appendIdeas(){
   downVote()
   deleteButton()
   removeIdea()
+  upVoting()
+  downVoting()
 }
 
 
