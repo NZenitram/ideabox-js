@@ -1,21 +1,27 @@
 window.onload = function() {
   var save = document.getElementById('save-button');
-  save.addEventListener('click', appendIdeas)
+  save.addEventListener('click', clearList)
   appendIdeas();
+}
+
+function clearList() {
+  var listItems = document.getElementById('my-ideas');
+  listItems.innerHTML = '';
+  appendIdeas()
 }
 
 function appendIdeas(){
   var ideas = localStorage.getItem('ideabox')
   var list = document.getElementById('ideas')
-  var ul = document.createElement('ul');
-  var idea = list.appendChild(ul);
+  var ul = document.getElementById('my-ideas')
   if (ideas !== null) {
     var ideasJSON = JSON.parse(localStorage.getItem('ideabox'));
     for (var i = 0; i < ideasJSON.length; i++) {
 
       var li = document.createElement('li');
 
-      ul.className = "my-ideas";
+      li.className = "ideas-li";
+
       li.innerHTML = `<h3 class="idea-title">${ideasJSON[i].title}<img class='del-svg' src="icons/delete.svg"></h3><p>${ideasJSON[i].idea}</p><img class='vote up-svg' src="icons/upvote.svg"><img class='vote down-svg' src="icons/downvote.svg"><p class="quality">quality: swill</p>`
 
       ul.appendChild(li)
@@ -26,6 +32,7 @@ function appendIdeas(){
   deleteButton()
   removeIdea()
 }
+
 
 function deleteButton() {
   var deletebuttons = document.getElementsByClassName('del-svg');

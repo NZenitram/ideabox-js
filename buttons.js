@@ -6,6 +6,7 @@ function removeIdea() {
 }
 
 function deleteIdea() {
+  var item = this.parentElement.parentElement
   var ideas = JSON.parse(localStorage.getItem('ideabox'))
   var title = this.parentElement.innerText
   for (var i = 0; i < ideas.length; i++) {
@@ -14,5 +15,5 @@ function deleteIdea() {
     }
   }
   localStorage.setItem('ideabox', JSON.stringify(ideas))
-  appendIdeas()
+  clearList()
 }
