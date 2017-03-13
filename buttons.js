@@ -6,13 +6,14 @@ function removeIdea() {
 }
 
 function deleteIdea() {
+  var item = this.parentElement.parentElement
   var ideas = JSON.parse(localStorage.getItem('ideabox'))
   var title = this.parentElement.innerText
   for (var i = 0; i < ideas.length; i++) {
     if (ideas[i].title === title) {
       ideas.splice(i, 1)
     }
-  localStorage.setItem('ideabox', JSON.stringify(ideas))
-  appendIdeas()
   }
+  localStorage.setItem('ideabox', JSON.stringify(ideas))
+  clearList()
 }

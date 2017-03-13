@@ -12,8 +12,9 @@ function saveIdea(){
   var save = document.getElementById('button')
   var titleText = title.getElementsByClassName('input-text')[0].value
   var bodyText = body.getElementsByClassName('input-text')[0].value
+  var quality = "quality: swill"
   clearFields(titleText, bodyText)
-  stringifyIdea(titleText, bodyText)
+  stringifyIdea(titleText, bodyText, quality)
 }
 
 function clearFields(titleText, bodyText) {
@@ -21,9 +22,9 @@ function clearFields(titleText, bodyText) {
   document.getElementById('body-field').value = ''
 }
 
-function stringifyIdea(titleText, bodyText){
+function stringifyIdea(titleText, bodyText, quality){
   var oldIdeas = JSON.parse(localStorage.getItem('ideabox')) || [];
-  var idea = {'title': titleText, 'idea': bodyText};
+  var idea = {'title': titleText, 'idea': bodyText, 'quality': quality};
   oldIdeas.push(idea);
   localStorage.setItem('ideabox', JSON.stringify(oldIdeas));
 }

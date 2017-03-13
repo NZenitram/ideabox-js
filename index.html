@@ -6,6 +6,9 @@
     <script type="text/javascript" src="save-ideas.js"></script>
     <script type="text/javascript" src="append-ideas.js"></script>
     <script type="text/javascript" src="buttons.js"></script>
+    <script type="text/javascript" src="filter.js"></script>
+    <script type="text/javascript" src="votes.js"></script>
+    <script type="text/javascript" src="edit.js"></script>
   </head>
   <body>
     <div id="center-div">
@@ -22,10 +25,11 @@
         </div>
       </div>
         <div id="search">
-          <input class="input-text search-text" type="search" name="search" placeholder="Search">
+          <input id="search-input" class="input-text search-text" type="search" name="search" placeholder="Search">
         </div>
       <div id="ideas">
-        <ul id="my-ideas"></ul>
+        <ul id="my-ideas">
+        </ul>
       </div>
     </div>
   </body>
