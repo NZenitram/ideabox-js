@@ -10,4 +10,4 @@ I wanted to build ideaBox after finished the Backend engirneering program at Tur
 
 #### Use it!
 
-The application is currently being hosted on an AWS S3 bucket, feel free to check it out [here](http://ideabox-js.s3-website-us-west-1.amazonaws.com/)
+The application is currently being hosted on an AWS S3 bucket, feel free to check it out [here](http://ideabox-js.s3-website-us-west-1.amazonaws.com/).
