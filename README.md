@@ -1,5 +1,7 @@
 # ideabox-js
 
+![](https://s3-us-west-1.amazonaws.com/github-readme-iamges/Screen+Shot+2017-04-17+at+4.11.55+PM.png)
+
 ### Overview
 
 Ideabox is a simple web application that allows the user to write ideas, thoughts, whatever they wish, and display them on the page. Ideas can be voted on by the user with a quality ranking. Ideas can also be searched for a deleted. The application uses your web browser's local storage to save the ideas and accesses that local storage when the page is loaded to display the information. The entire application was built using JavaScript, HTML, and CSS. 
